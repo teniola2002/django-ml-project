@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Prediction</title>
+</head>
+<body>
+    <h2>This is my homepage</h2>
+
+    <form action="{% url 'result' %}" method="POST">
+        {% csrf_token %}
+
+        <label>Na:</label>
+        <input type="text" name="Na" required><br><br>
+
+        <label>Mg:</label>
+        <input type="text" name="Mg" required><br><br>
+
+        <label>Al:</label>
+        <input type="text" name="Al" required><br><br>
+
+        <label>Si:</label>
+        <input type="text" name="Si" required><br><br>
+
+        <label>K:</label>
+        <input type="text" name="K" required><br><br>
+
+        <label>Ca:</label>
+        <input type="text" name="Ca" required><br><br>
+
+        <label>Ba:</label>
+        <input type="text" name="Ba" required><br><br>
+
+        <label>Fe:</label>
+        <input type="text" name="Fe" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+</body>
+</html>
