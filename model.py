@@ -2,15 +2,15 @@ import pandas as pd
 import numpy as np
 import pickle
 
-pickle.dump(cls, open("model.pkl", "wb"))
+
 
 dataset = pd.read_csv("glass_data.csv")
+print(dataset.head())
+print(dataset.dtypes)
 
-# Independent variables
-X = dataset.iloc[:, :-1]
 
-# Dependent variable
-y = dataset.iloc[:, 9]
+X = dataset.iloc[:, 1:-1]   # remove ID
+y = dataset["Type"]
 
 # Splitting the dataset
 from sklearn.model_selection import train_test_split
@@ -33,6 +33,7 @@ cls = RandomForestClassifier(
 )
 cls.fit(X_train, y_train)
 
+pickle.dump(cls, open("model.pkl", "wb"))
 # Prediction
 y_pred = cls.predict(X_test)
 
