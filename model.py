@@ -9,7 +9,7 @@ print(dataset.head())
 print(dataset.dtypes)
 
 
-X = dataset.iloc[:, 1:-1]   # remove ID
+X = dataset[["Na", "Mg", "Al", "Si", "K", "Ca", "Ba", "Fe"]]
 y = dataset["Type"]
 
 # Splitting the dataset
