@@ -18,12 +18,15 @@ def result(request):
         Ba = float(request.POST["Ba"])
         Fe = float(request.POST["Fe"])
 
-        data = [[Na, Mg, Al, Si, K, Ca, Ba, Fe]]
+        data = [Na, Mg, Al, Si, K, Ca, Ba, Fe]
 
-        prediction = model.predict(data)
+        prediction = model.predict([data])
 
         return render(request, "predictor/result.html", {
-            "result": prediction[0]
+            "prediction": prediction[0],   
+            "data": data                  
         })
+
+    return render(request, "predictor/result.html")
     
     
