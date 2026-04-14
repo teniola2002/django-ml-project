@@ -1,5 +1,8 @@
 import pandas as pd 
 import numpy as np
+import pickle
+
+pickle.dump(cls, open("model.pkl", "wb"))
 
 dataset = pd.read_csv("glass_data.csv")
 
